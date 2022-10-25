@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class End : MonoBehaviour
+{
+	public TextMeshProUGUI endText;
+    // Start is called before the first frame update
+    void Start()
+    {
+        endText.enabled = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Rotate(0, 5f, 0, Space.World);
+    }
+	void OnTriggerEnter(Collider other) {
+
+		// trigger coin pickup function if a helicopter collides with this
+        endText.enabled = true;
+        other.Destroy();
+        
+		
+	}
+
+}
